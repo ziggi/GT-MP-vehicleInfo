@@ -9,7 +9,7 @@ namespace GT_MP_vehicleInfo
     public class Main : Script
     {
 
-        public static readonly string BasePath = @"scripts/vehicleinfo/";
+        public static readonly string BasePath = "scripts/vehicleinfo/";
         public static readonly Storage Storage = new Storage();
         public static string languageCode = "";
 
@@ -38,7 +38,7 @@ namespace GT_MP_vehicleInfo
             }*/
             if (e.KeyCode == Keys.NumPad1)
             {
-                if (string.IsNullOrEmpty(languageCode)) languageCode = Game.GetUserInput("de");
+                if (string.IsNullOrEmpty(languageCode)) languageCode = Game.GetUserInput("ru");
                 
                 Notification.Show("~y~Starting...");
                 

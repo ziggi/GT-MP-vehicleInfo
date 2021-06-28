@@ -1,22 +1,50 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.0.0
-MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT_MP_vehicleInfo", "GT-MP-vehicleInfo.csproj", "{CE631213-A4C3-4247-9874-7A586D4B400E}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT-MP-vehicleInfo", "GT-MP-vehicleInfo.csproj", "{CE631213-A4C3-4247-9874-7A586D4B400E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptHookVDotNet", "..\scripthookvdotnet\ScriptHookVDotNet.csproj", "{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		NativeGen|Any CPU = NativeGen|Any CPU
+		NativeGen|x64 = NativeGen|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CE631213-A4C3-4247-9874-7A586D4B400E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE631213-A4C3-4247-9874-7A586D4B400E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.NativeGen|Any CPU.ActiveCfg = Release|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.NativeGen|Any CPU.Build.0 = Release|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.NativeGen|x64.ActiveCfg = Release|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.NativeGen|x64.Build.0 = Release|Any CPU
 		{CE631213-A4C3-4247-9874-7A586D4B400E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE631213-A4C3-4247-9874-7A586D4B400E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE631213-A4C3-4247-9874-7A586D4B400E}.Release|x64.Build.0 = Release|Any CPU
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Debug|Any CPU.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Debug|Any CPU.Build.0 = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Debug|x64.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Debug|x64.Build.0 = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.NativeGen|Any CPU.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.NativeGen|Any CPU.Build.0 = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.NativeGen|x64.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.NativeGen|x64.Build.0 = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Release|Any CPU.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Release|x64.ActiveCfg = Release|x64
+		{61165C1A-6BFE-4776-B371-5A3FDB1A2ED7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F1C5D26-E309-4529-B27A-29F9FA097E98}
 	EndGlobalSection
 EndGlobal

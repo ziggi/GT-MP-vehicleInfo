@@ -50,8 +50,10 @@ namespace GT_MP_vehicleInfo.Processors
             Script.Wait(25);
 
 	        if (veh == null) return;
-	            
-	        OutputProcessor.Process(@"gen_vdata/" + vehicle.name + ".json", new VehicleCache
+
+            string path = Main.GetPath("gen_vdata/" + vehicle.name + ".json");
+
+            OutputProcessor.Process(path, new VehicleCache
 	        {
 		        mods = ProcessVehicleMods(veh),
 		        liveries = ProcessVehicleLiveries(veh),
@@ -91,15 +93,10 @@ namespace GT_MP_vehicleInfo.Processors
 	    }
 
 	    private static VehicleDimensions GetVehicleDimensions(int hash)
-	    {
+		{
+			var dimensions = new Model(hash).Dimensions;
 
-		    Vector3 min, max;
-		    unsafe
-		    {
-			    Function.Call(Hash.GET_MODEL_DIMENSIONS, hash, &min, &max);
-		    }
-		    
-			return new VehicleDimensions{ min = min, max = max};
+            return new VehicleDimensions{ min = dimensions.rearBottomLeft, max = dimensions.frontTopRight };
 	    }
 
 	    private static VehicleLiveries ProcessVehicleLiveries(Vehicle vehicle)

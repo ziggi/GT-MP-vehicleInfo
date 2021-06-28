@@ -12,6 +12,8 @@ namespace GT_MP_vehicleInfo.Processors
         {
             foreach (var vehicleData in Main.Storage.vehicleStorage.Values)
             {
+                Console.Debug("vehicleData: " + vehicleData.name);
+
                 CleanUpWheels(vehicleData);
                 RemoveEmptyMods(vehicleData);
             }
@@ -19,6 +21,7 @@ namespace GT_MP_vehicleInfo.Processors
 
         public static void CleanUpWheels(VehicleData vehicle)
         {
+            if (vehicle.mods is null) return;
             // If the stock wheel doesnt exist, clear
             if (!vehicle.mods.ContainsKey(23)) return;
             var mods = vehicle.mods[23];
@@ -28,6 +31,7 @@ namespace GT_MP_vehicleInfo.Processors
 
         public static void RemoveEmptyMods(VehicleData vehicle)
         {
+            if (vehicle.mods is null) return;
             var emptyIds = vehicle.mods.Where(e => e.Value.amount == 0).Select(e => e.Key).ToArray();
 
             Console.Debug("EMPTYIDS: " + JsonConvert.SerializeObject(emptyIds));

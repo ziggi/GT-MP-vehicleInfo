@@ -43,30 +43,35 @@ namespace GT_MP_vehicleInfo.Processors
 
         private static void OutputSeperateVehicles()
         {
+            JsonSerializerSettings settings = defaultSettings;
+            settings.Formatting = Formatting.Indented;
+
             foreach (var entry in Main.Storage.vehicleStorage)
             {
-                Process(@"output/vehicleInfo-" + Main.languageCode + "/" + entry.Key + ".json", entry.Value);
+                string path = Path.Combine(Main.BasePath, "output/vehicleInfo-" + Main.languageCode + "/") + entry.Value.name + ".json";
+                Process(path, entry.Value, settings);
             }
             
             // COMPRESS FILES
-            var zipfile = Main.GetPath("output/vehicleInfo-" + Main.languageCode + ".zip");
-            if(File.Exists(zipfile)) File.Delete(zipfile);
-            System.IO.Compression.ZipFile.CreateFromDirectory(Main.GetPath("output/vehicleInfo-" + Main.languageCode + "/"), zipfile);
+            //var zipfile = Main.GetPath("output/vehicleInfo-" + Main.languageCode + ".zip");
+            //if(File.Exists(zipfile)) File.Delete(zipfile);
+            //System.IO.Compression.ZipFile.CreateFromDirectory(Main.GetPath("output/vehicleInfo-" + Main.languageCode + "/"), zipfile);
         }
         
         private static void OutputToJson(JsonSerializerSettings settings, string extension)
         {
-            Process(@"output/vehicleInfo" + extension + ".json", Main.Storage.vehicleStorage, settings);
+            string path = Path.Combine(Main.BasePath, "output/") + "vehicleInfo" + extension + ".json";
+            Process(path, Main.Storage.vehicleStorage, settings);
         }
         
         public static void Process(string path, object data, JsonSerializerSettings settings = null)
         {
             if (settings == null) settings = defaultSettings;
             string payload = JsonConvert.SerializeObject(data, settings);
-            
+
             try
             {
-                File.WriteAllText(Main.GetPath(path, true), payload);
+                File.WriteAllText(path, payload);
             }
             catch (IOException e)
             {
